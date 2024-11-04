@@ -4,7 +4,7 @@
   "name": "team51/colophon",
   "version": "0.1.0",
   "title": "Colophon",
-  "category": "common",
+  "category": "theme",
   "icon": "editor-textcolor",
   "description": "A block for displaying a colophon.",
   "supports": {
@@ -25,7 +25,5 @@
   },
   "textdomain": "team51-blocks",
   "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
   "render": "file:./render.php"
 }

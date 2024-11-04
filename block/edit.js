@@ -1,7 +1,8 @@
 /**
- * Retrieves the translation of text.
+ * Import the ServerSideRender component from the @wordpress/server-side-render package.
+ * This component is used to render the block on the server side.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/
  */
 import ServerSideRender from "@wordpress/server-side-render";
 
@@ -14,12 +15,8 @@ import ServerSideRender from "@wordpress/server-side-render";
 import { useBlockProps } from "@wordpress/block-editor";
 
 /**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ * Import the block.json to get the block meta.
  */
-import "./editor.scss";
 import blockMeta from "./block.json";
 
 /**
@@ -31,9 +28,12 @@ import blockMeta from "./block.json";
  * @return {WPElement} Element to render.
  */
 export default function Edit(props) {
-	return (
-		<div {...useBlockProps()}>
-			<ServerSideRender block={blockMeta.name} attributes={props.attributes} />
-		</div>
-	);
+    return (
+        <div {...useBlockProps()}>
+            <ServerSideRender
+                block={blockMeta.name}
+                attributes={props.attributes}
+            />
+        </div>
+    );
 }
